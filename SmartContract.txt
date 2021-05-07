@@ -1,0 +1,41 @@
+pragma solidity >=0.4.0 <0.7.0;
+
+
+contract Worker{
+    
+    uint256[] public R;
+    uint256[] public Y;
+    uint256[] public C;
+    uint256   public node_number;
+    
+
+    
+    function init_node(uint256 index) public returns(uint256){   //after constructor, init this tcsc 
+        R    = new uint256[](index * 4);
+        Y    = new uint256[](4);
+        C    = new uint256[](index * 4);
+        return 0;
+    }
+    
+    function set_nodeR(uint256 index,uint256 a,uint256 b,uint256 c,uint256 d) public {
+        R[index] = a; 
+        R[index + 1] = b;
+        R[index + 2] = c;
+        R[index + 3] = d;
+    }
+     function set_nodeY(uint256 index,uint256 a,uint256 b,uint256 c,uint256 d) public {
+        Y[index] = a; 
+        Y[index + 1] = b;
+        Y[index + 2] = c;
+        Y[index + 3] = d;
+    }
+     function set_nodeC(uint256 index,uint256 a,uint256 b,uint256 c,uint256 d) public {
+        C[index] = a; 
+        C[index + 1] = b;
+        C[index + 2] = c;
+        C[index + 3] = d;
+    }
+    
+  
+    
+}
